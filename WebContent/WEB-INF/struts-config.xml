@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+  "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+  "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+  <form-beans>
+  	<form-bean name="etudiantForm" 
+  	type="ecole.ensa.etudiant.presentation.forms.EtudiantForm">
+  		<form-property name="nom" type="java.lang.String" />
+  		<form-property name="prenom" type="java.lang.String" />
+  		<form-property name="cin" type="java.lang.String" />
+  		<form-property name="tel" type="java.lang.String" />
+  		<form-property name="mail" type="java.lang.String" />
+  	</form-bean>
+  </form-beans>
+  
+  <action-mappings>
+  	<action path="/ajouter" input="/vues/acceuil.jsp" validate="true" name="etudiantForm"
+  	type="ecole.ensa.etudiant.presentation.action.AjouterEtudiantAction">
+  		<forward name="success" path="/vues/ajout_ok.jsp"/>
+  		<forward name="erreur" path="/vues/ajout_ko.jsp"/>
+  	</action>
+  	
+  	<action path="/supprimer" input="/index.jsp" name="etudiantForm"
+  	type="ecole.ensa.etudiant.presentation.action.SupprimerEtudiantAction">
+  		<forward name="success" path="/vues/ajout_ok.jsp"/>
+  		<forward name="erreur" path="/vues/ajout_ko.jsp"/>
+  	</action>
+  	
+  	<action path="/rechercher" input="/index.jsp" name="etudiantForm"
+  	type="ecole.ensa.etudiant.presentation.action.EtudiantServletAction">
+  		<forward name="success" path="/vues/ajout_ok.jsp"/>
+  		<forward name="erreur" path="/vues/ajout_ko.jsp"/>
+  	</action>
+  </action-mappings>
+  
+  <message-resources parameter="messages"></message-resources>
+
+</struts-config>

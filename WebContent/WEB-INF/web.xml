@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>GestionEtudiant</display-name>
+  
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+   
+  <servlet-mapping>
+  	<servlet-name>action</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 
+  <servlet>
+  	<servlet-name>ControlleurPrincipal</servlet-name>
+  	<servlet-class>ecole.ensa.etudiant.presentation.ServletAction</servlet-class>
+  </servlet>
+   
+  <servlet-mapping>
+  	<servlet-name>ControlleurPrincipal</servlet-name>
+  	<url-pattern>/do/*</url-pattern>
+  </servlet-mapping>
+  -->
+  <jsp-config>
+    
+    <taglib>
+      <taglib-uri>/struts-bean</taglib-uri>
+      <taglib-location>/WEB-INF/struts-bean.tld</taglib-location>
+    </taglib>
+
+    <taglib>
+      <taglib-uri>/struts-html</taglib-uri>
+      <taglib-location>/WEB-INF/struts-html.tld</taglib-location>
+    </taglib>
+
+    <taglib>
+      <taglib-uri>/struts-logic</taglib-uri>
+      <taglib-location>/WEB-INF/struts-logic.tld</taglib-location>
+    </taglib>
+
+    <taglib>
+      <taglib-uri>/struts-nested</taglib-uri>
+      <taglib-location>/WEB-INF/struts-nested.tld</taglib-location>
+    </taglib>
+
+    <taglib>
+      <taglib-uri>/struts-tiles</taglib-uri>
+      <taglib-location>/WEB-INF/struts-tiles.tld</taglib-location>
+    </taglib>
+  </jsp-config>
+  <!--  
+  <servlet>
+  	<servlet-name>RechercheEtudiant</servlet-name>
+  	<servlet-class>ecole.ensa.etudiant.presentation.EtudiantServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>RechercheEtudiant</servlet-name>
+  	<url-pattern>/rechercher</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>AjouterEtudiant</servlet-name>
+  	<servlet-class>ecole.ensa.etudiant.presentation.AjouterEtudiant</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AjouterEtudiant</servlet-name>
+  	<url-pattern>/ajouter</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>SupprimerEtudiant</servlet-name>
+  	<servlet-class>ecole.ensa.etudiant.presentation.SupprimerEtudiant</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SupprimerEtudiant</servlet-name>
+  	<url-pattern>/supprimer</url-pattern>
+  </servlet-mapping>
+  -->
+  <welcome-file-list>
+    <welcome-file>./vues/acceuil.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
